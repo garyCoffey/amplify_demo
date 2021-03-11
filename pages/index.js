@@ -2,9 +2,6 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-const handleSubmit = () => {
-
-}
 
   return (
     <div className={styles.container}>
@@ -17,10 +14,10 @@ const handleSubmit = () => {
         <h1 className={styles.title}>
           Welcome to this cool App!!
         </h1>
-        <form onSubmit={this.handleSubmit}>
+        <form >
           <label>
             Name:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <input type="text" />
           </label>
           <input type="submit" value="Submit" />
         </form>
