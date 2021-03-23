@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import createPerson from "../api/createPerson"
+
 export default {
   name: 'Registration',
   data() {
@@ -44,7 +46,8 @@ export default {
   },
   methods: {
     submit() {
-      alert(`First Name: ${this.$data.firstName} Last Name: ${this.$data.lastName} Email: ${this.$data.email}`)
+      // alert(`First Name: ${this.$data.firstName} Last Name: ${this.$data.lastName} Email: ${this.$data.email}`)
+      createPerson.createPerson(this.$data.firstName, this.$data.lastName, this.$data.email)
     }
   }
 }
