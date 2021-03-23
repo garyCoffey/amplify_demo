@@ -29,22 +29,39 @@
         @click="submit">
       Submit</button>
     </form>
+    {{people}}
   </div>
 </template>
 
 <script>
+import { createPerson, listPersons } from "../api/createPerson"
+
 export default {
   name: 'Registration',
+   async created() {
+    this.getPeople();
+  },
   data() {
     return {
       firstName: "",
       lastName: "",
-      email: ""
+      email: "",
+      people: []
     }
   },
   methods: {
-    submit() {
-      alert(`First Name: ${this.$data.firstName} Last Name: ${this.$data.lastName} Email: ${this.$data.email}`)
+    async submit(e) {
+      e.preventDefault();
+
+      const { firstName, lastName, email } = this;
+      const input = { firstName, lastName, email }
+      const person = await createPerson(input)
+      console.log(person)
+    },
+    async getPeople() {
+      const people = await listPersons()
+
+      this.people = people.data.listPersons.items;
     }
   }
 }
