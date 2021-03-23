@@ -1,19 +1,20 @@
-import { API } from "aws-amplify";
+import Amplify, { API } from "aws-amplify";
 import * as mutations from "../graphql/mutations"
+import * as queries from "../graphql/queries"
+import awsconfig from '../aws-exports'
+Amplify.configure(awsconfig)
 
-const createPerson = async (firstName, lastName, email) => {
-  return await Promise.resolve(API.graphql({
-    query: mutations.createPerson,
-    input: { firstName: firstName, lastName: lastName, email: email },
-    authMode: "AWS_IAM",
-  }))
-  .then((res) => console.log(res))
-  .catch((err) => {
-    console.log(err);
-    throw err;
-  });
+export const createPerson = async (input) => {
+  console.log(input)
+    return await API.graphql({
+      query: mutations.createPerson,
+      variables: { input: input }
+    })
 }
 
-export default {
-  createPerson: createPerson
+export const listPersons = async (input) => {
+  console.log(input)
+    return await API.graphql({
+      query: queries.listPersons,
+    })
 }

@@ -1,8 +1,4 @@
-type Person @model @auth(
-    rules: [
-      { allow: public, provider: iam, operations: [read, create] }
-    ]
-  ){
+type Person @model {
   id: ID!
   firstName: String!
   lastName: String!
