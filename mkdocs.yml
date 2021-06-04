@@ -6,7 +6,21 @@ site_dir: site
 repo_name: garyCoffey/amplify_demo
 repo_url: https://github.com/garyCoffey/amplify_demo
 nav:
-    - Home: 'index.md'
-    - Other: 'other.md'
+  - Home: 'index.md'
+  - Documentation:
+    - Intro: 'documentation/index.md'
+    - Trees: 'tech/tree.md'
+    - Example: https://github.com/CodePlatoonAlumni/alumni-fe
+    - Markdown Cheatsheet: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+  - Technical Diagrams:
+    - Intro: 'tech/index.md'
+    - Lucid Chart:
+      - Example: 'tech/lucid/diagrams.md'
+      - Lucid Chart Recommendations: https://www.lucidchart.com/blog/visualize-code-documentation
+  - Tips for app Demo: 'demo_tips.md'
 theme:
-  name: mkdocs
+  name: material
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
