@@ -1,0 +1,12 @@
+site_name: Documentation & Presentation Example
+site_description: Discusses demo/presentation tips
+site_author: Gary Coffey
+docs_dir: docs
+site_dir: site
+repo_name: garyCoffey/amplify_demo
+repo_url: https://github.com/garyCoffey/amplify_demo
+nav:
+    - Home: 'index.md'
+    - Other: 'other.md'
+theme:
+  name: mkdocs
